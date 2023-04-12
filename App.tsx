@@ -6,9 +6,10 @@
  */
 
 import React, {FC} from 'react';
+import VideoRoomsScreen from './src/features/Video/screens/VideoRoomsScreen';
 
 const App: FC = () => {
-  return <></>;
+  return <VideoRoomsScreen />;
 };
 
 export default App;
