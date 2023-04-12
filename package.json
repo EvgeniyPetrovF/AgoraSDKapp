@@ -7,12 +7,16 @@
     "ios": "react-native run-ios --udid='3087DDF8-CA47-48E0-AFB8-F631A7753CC2'",
     "lint": "eslint .",
     "start": "react-native start",
+    "reset": "react-native start --reset-cache",
     "test": "jest",
     "pods": "cd ios && pod install && cd .."
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.71.6"
+    "react-native": "0.71.6",
+    "agora-react-native-rtm": "^1.5.1",
+    "agora-rn-uikit": "^5.0.1",
+    "react-native-agora": "^4.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
