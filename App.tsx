@@ -6,10 +6,15 @@
  */
 
 import React, {FC} from 'react';
-import VideoRoomsScreen from './src/features/Video/screens/VideoRoomsScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import MainTabNavigator from './src/navigators/MainTabNavigator';
 
 const App: FC = () => {
-  return <VideoRoomsScreen />;
+  return (
+    <NavigationContainer>
+      <MainTabNavigator />
+    </NavigationContainer>
+  );
 };
 
 export default App;
