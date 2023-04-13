@@ -19,6 +19,13 @@ export default {
     big: 22,
     large: 28,
   },
+  family: {
+    robotoCondensed: {
+      bold: 'RobotoCondensed-Bold',
+      light: 'RobotoCondensed-Light',
+      default: 'RobotoCondensed-Regular',
+    },
+  },
   weight: {
     thin: '400' as FontWeight,
     normal: '500' as FontWeight,

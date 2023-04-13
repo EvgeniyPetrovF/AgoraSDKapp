@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {Dimensions, StyleSheet, View} from 'react-native';
 import {LineChart} from 'react-native-chart-kit';
 import TextWrapper from '../../../../components/TextWrapper';
-import {colors} from '../../../../constants';
+import {colors, dimensions, text} from '../../../../constants';
 
 type Props = {
   labels: string[];
@@ -10,6 +10,8 @@ type Props = {
 };
 
 const {width} = Dimensions.get('window');
+
+const chartHeight = 450;
 
 const chartConfig = {
   backgroundGradientFromOpacity: 0,
@@ -44,7 +46,7 @@ const Chart: FC<Props> = ({labels, data}) => {
         }}
         withVerticalLabels={false}
         width={width}
-        height={450}
+        height={chartHeight}
         withInnerLines={false}
         chartConfig={chartConfig}
         bezier
@@ -59,12 +61,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   chart: {
-    marginVertical: 8,
-    borderRadius: 16,
+    margin: dimensions.offset.small,
+    borderRadius: dimensions.borderRadius.big,
+    paddingHorizontal: dimensions.offset.normal,
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: text.size.big,
+    fontWeight: text.weight.bold,
   },
 });
 
