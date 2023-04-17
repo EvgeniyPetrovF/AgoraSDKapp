@@ -7,12 +7,12 @@
 
 import React, {FC} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import MainTabNavigator from './src/navigators/MainTabNavigator';
+import AppStack from './src/navigators/AppStack';
 
 const App: FC = () => {
   return (
     <NavigationContainer>
-      <MainTabNavigator />
+      <AppStack />
     </NavigationContainer>
   );
 };
