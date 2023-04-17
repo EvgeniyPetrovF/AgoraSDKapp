@@ -1,5 +1,8 @@
 import {useEffect, useState} from 'react';
-import FingerprintScanner, {Biometrics} from 'react-native-fingerprint-scanner';
+import FingerprintScanner, {
+  Biometrics,
+  FingerprintScannerError,
+} from 'react-native-fingerprint-scanner';
 import {useAuth} from '../../../common/hooks/useAuth';
 
 const getMessage = (biometryType: Biometrics) => {
@@ -24,16 +27,19 @@ const useLoginForm = () => {
         setBiometryType(biometryType);
       } catch (e) {
         console.log('isSensorAvailable error => ', e);
-        setError((e as Error).message);
+        setError((e as FingerprintScannerError).message);
       }
     })();
 
-    return () => FingerprintScanner.release();
+    return () => {
+      FingerprintScanner.release();
+    };
   }, []);
 
   const showAuthenticationDialog = async () => {
     if (biometryType) {
       await FingerprintScanner.authenticate({
+        title: 'Sign In',
         description: getMessage(biometryType),
       });
       signIn();
@@ -48,7 +54,7 @@ const useLoginForm = () => {
       await showAuthenticationDialog();
     } catch (e) {
       console.log('Authentication error is => ', e);
-      setError((e as Error).message);
+      setError((e as FingerprintScannerError).message);
     } finally {
       setIsLoading(false);
     }

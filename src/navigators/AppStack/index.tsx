@@ -11,27 +11,18 @@ import MainTabNavigator from '../MainTabNavigator';
 const Stack = createNativeStackNavigator<StackParamList>();
 
 const options: Record<string, NativeStackNavigationOptions> = {
-  home: {headerTitle: 'Home'},
-  auth: {headerShown: false},
+  navigator: {headerShown: false},
 };
 
 const AppStack = () => {
   const {auth} = useAuth();
 
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName="Login" screenOptions={options.navigator}>
       {auth ? (
-        <Stack.Screen
-          name="MainTabNavigator"
-          component={MainTabNavigator}
-          options={options.home}
-        />
+        <Stack.Screen name="MainTabNavigator" component={MainTabNavigator} />
       ) : (
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={options.auth}
-        />
+        <Stack.Screen name="Login" component={LoginScreen} />
       )}
     </Stack.Navigator>
   );

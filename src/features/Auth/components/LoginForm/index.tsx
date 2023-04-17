@@ -12,10 +12,9 @@ const LoginForm = () => {
   return (
     <View style={styles.formContainer}>
       {biometryType && (
-        <TextWrapper
-          style={
-            styles.text
-          }>{`Biometry Type is: ${biometryType}`}</TextWrapper>
+        <TextWrapper style={styles.text}>
+          {`Biometry Type is: ${biometryType}`}
+        </TextWrapper>
       )}
       <CustomButton
         label="Sign In"

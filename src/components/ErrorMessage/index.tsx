@@ -9,11 +9,15 @@ interface Props extends ViewProps {
 }
 
 const ErrorMessage: FC<Props> = ({message, visible, style, ...rest}) => {
-  return visible ? (
+  if (!visible) {
+    return null;
+  }
+
+  return (
     <View style={[styles.container, style]} {...rest}>
       {message && <TextWrapper style={styles.text}>{message}</TextWrapper>}
     </View>
-  ) : null;
+  );
 };
 
 export default ErrorMessage;
