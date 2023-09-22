@@ -55,5 +55,13 @@
 	<string>Access the microphone.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Access the camera.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>RobotoCondensed-Bold.ttf</string>
+		<string>RobotoCondensed-Light.ttf</string>
+		<string>RobotoCondensed-Regular.ttf</string>
+	</array>
+	<key>NSFaceIDUsageDescription</key>
+	<string>App requires FaceID access to allow you quick and secure access.</string>
 </dict>
 </plist>
