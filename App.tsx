@@ -5,14 +5,19 @@
  * @format
  */
 
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import {NavigationContainer} from '@react-navigation/native';
-import MainTabNavigator from './src/navigators/MainTabNavigator';
+import AppStack from './src/navigators/AppStack';
 
 const App: FC = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
     <NavigationContainer>
-      <MainTabNavigator />
+      <AppStack />
     </NavigationContainer>
   );
 };
